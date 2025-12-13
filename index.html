@@ -88,7 +88,60 @@
       <!-- The API will replace this div with the iframe player -->
       <div id="player"></div>
     </section>
-    
+    <!-- Learn How Trees Work Section -->
+<section class="tree-video-section">
+  
+  <h2 class="tree-video-header">Learn how trees work hard for us.</h2>
+
+  <div class="tree-video-wrapper">
+    <iframe 
+      class="tree-video"
+      src="https://www.youtube.com/embed/t1ztbJqJcGs" 
+      title="YouTube video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</section>
+
+<style>
+  /* Section styling */
+  .tree-video-section {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #FFD8A8; /* light orange */
+    text-align: center;
+  }
+
+  .tree-video-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  /* Wrapper ensures responsive video sizing */
+  .tree-video-wrapper {
+    width: 50%; /* half the screen width */
+    margin: 0 auto; /* center on page */
+    aspect-ratio: 16 / 9; /* keeps proper video shape */
+  }
+
+  /* YouTube iframe sizing */
+  .tree-video {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .tree-video-wrapper {
+      width: 100%;
+    }
+  }
+</style>
 <style>
   /* Card background color goes HERE */
   .card {
