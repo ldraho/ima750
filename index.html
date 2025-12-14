@@ -1,12 +1,11 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CSS Grid — Hero YouTube</title>
+
   <style>
-/* :root selector will override conflicting styles defined with html if they appear in the same stylesheet */
     :root{
       --gap:16px;
       --bg:#f5f6f8;
@@ -24,23 +23,21 @@
       background-color: rgba(0,0,0,1.0);
     }
 
-    /* page grid */
+    /* Page grid layout */
     .page{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       grid-auto-rows: min-content;
       gap:var(--gap);
       padding:var(--gap);
-      background:var(--bg);
-      box-sizing:border-box;
       align-items:start;
-      background-color: #FFD8A8);
+      background-color: #FFD8A8; /* fixed */
     }
 
-    /* The "first cell is the entire viewport" — we make the hero span all columns and fill the viewport height */
+    /* HERO video fills entire viewport */
     .hero{
       grid-column: 1 / -1;
-      height:100vh; /* fill the viewport */
+      height:100vh;
       position:relative;
       border-radius:12px;
       overflow:hidden;
@@ -48,17 +45,17 @@
       box-shadow:0 6px 20px rgba(0,0,0,0.12);
     }
 
-    /* Make the YouTube iframe / player fill the hero area */
+    /* YouTube player fills hero */
     .hero #player,
     .hero iframe{
       position:absolute;
-      inset:0; /* top/right/bottom/left = 0 */
+      inset:0;
       width:100%;
       height:100%;
       border:0;
     }
 
-    /* Example grid content below the hero */
+    /* Card styling */
     .card{
       background:#FFD8A8;
       padding:16px;
@@ -66,120 +63,101 @@
       box-shadow:0 4px 12px rgba(0,0,0,0.06);
     }
 
-    /* responsive: on narrow screens reduce to 1 column */
+    /* Responsive grid: 1 column on small screens */
     @media (max-width:800px){
       .page{grid-template-columns:1fr}
+    }
+
+    /* ---- Tree video section ---- */
+    .tree-video-section {
+      grid-column: 1 / -1;
+      width: 100%;
+      padding: 40px 20px;
+      background-color: #FFD8A8;
+      text-align: center;
+    }
+
+    .tree-video-header {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Enlarged video wrapper (~50% larger than before) */
+    .tree-video-wrapper {
+      width: 86%;              /* bigger than previous 70% */
+      max-width: 1100px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      max-height: 65vh;
+    }
+
+    .tree-video {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    @media (max-width:768px){
+      .tree-video-wrapper{
+        width:100%;
+        max-height:none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!--
-    Single-file example page.
-    - The first cell (.hero) spans the full grid width and has height:100vh so it fills the viewport.
-    - The YouTube IFrame Player API is loaded and used to create a controllable player inside #player.
-    - Change `VIDEO_ID` in the script below to show a different video.
-  -->
-
   <main class="page">
 
-    <!-- HERO: first grid cell = entire viewport with YouTube player -->
+    <!-- HERO VIDEO (viewport) -->
     <section class="hero" aria-label="Hero video">
-      <!-- The API will replace this div with the iframe player -->
       <div id="player"></div>
     </section>
-    <!-- Learn How Trees Work Section -->
-<section class="tree-video-section">
-  
-  <h2 class="tree-video-header">Learn how trees work hard for us.</h2>
 
-  <div class="tree-video-wrapper">
-    <iframe 
-      class="tree-video"
-      src="https://www.youtube.com/embed/t1ztbJqJcGs" 
-      title="YouTube video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <!-- SECOND VIDEO SECTION -->
+    <section class="tree-video-section">
+      <h2 class="tree-video-header">Learn how trees work hard for us.</h2>
 
-</section>
+      <div class="tree-video-wrapper">
+        <iframe 
+          class="tree-video"
+          src="https://www.youtube.com/embed/t1ztbJqJcGs"
+          title="YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
 
-<style>
-  /* Section styling */
-  .tree-video-section {
-    width: 100%;
-    padding: 40px 20px;
-    background-color: #FFD8A8; /* light orange */
-    text-align: center;
-  }
+    <!-- THREE GRID CARDS -->
+    <section class="card">
+      <h3>Resources</h3>
+      <p>Find more resources about caring for street trees.</p>
+      <p><a href="https://ldraho.github.io/ima750/resources.html" target="_blank">Resources</a></p>
+    </section>
 
-  .tree-video-header {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
+    <section class="card">
+      <h3>Learn More</h3>
+      <p>Learn more about NYC street trees.</p>
+      <p><a href="https://ldraho.github.io/ima750/manifesto1.html" target="_blank">Learn More</a></p>
+    </section>
 
-  /* Wrapper ensures responsive video sizing */
-  .tree-video-wrapper {
-    width: 70%; /* half the screen width */
-    margin: 0 auto; /* center on page */
-    aspect-ratio: 16 / 9; /* keeps proper video shape */
-  }
+    <section class="card">
+      <h3>About Street Trees</h3>
+      <p>Learn what NYC is doing to manage street trees.</p>
+      <p><a href="https://ldraho.github.io/ima750/manifesto1.html" target="_blank">About</a></p>
+    </section>
 
-  /* YouTube iframe sizing */
-  .tree-video {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-  }
-
-  /* Mobile responsive */
-  @media (max-width: 768px) {
-    .tree-video-wrapper {
-      width: 100%;
-    }
-  }
-</style>
-<style>
-  /* Card background color goes HERE */
-  .card {
-    background-color: #FFD8A8;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-  }
-</style>
-<!-- Resources card -->
-<section class="card">
-  <h3>Resources</h3>
-  <p>Find more resources about caring for street trees.</p>
-  <p><a href="https://ldraho.github.io/ima750/resources.html" target="_blank">Resources</a></p>
-</section>
-
-<!-- Learn More card -->
-<section class="card">
-  <h3>Learn More</h3>
-  <p>Learn more about NYC street trees.</p>
-  <p><a href="https://ldraho.github.io/ima750/manifesto1.html" target="_blank">Learn More</a></p>
-</section>
-
-<!-- About Street Trees card -->
-<section class="card">
-  <h3>About Street Trees</h3>
-  <p>Learn what NYC is doing to manage street trees.</p>
-  <p><a href="https://ldraho.github.io/ima750/manifesto1.html" target="_blank">About</a></p>
-</section>
   </main>
 
-  <!-- Load YouTube IFrame API
-   https://developers.google.com/youtube/iframe_api_reference -->
+  <!-- YOUTUBE API SCRIPT FOR HERO VIDEO -->
   <script>
-    // Change this VIDEO_ID to the YouTube video you want to show
-    const VIDEO_ID = 'DbkaCLl_HbQs';
+    /* Updated hero video ID */
+    const VIDEO_ID = 'DbkaCLl_HbQ';
 
-    // 1) Inject the YouTube IFrame API script
+    /* Load YouTube API */
     (function loadYouTubeAPI(){
       const tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
@@ -187,48 +165,42 @@
       document.head.appendChild(tag);
     })();
 
-    // 2) This function will be called by the YouTube API when it is ready
-    // (global name required by the API)
+    /* YouTube callback */
     function onYouTubeIframeAPIReady(){
-      // create the player inside the `player` div
       window.ytPlayer = new YT.Player('player', {
         videoId: VIDEO_ID,
         playerVars: {
           autoplay: 0,
           controls: 1,
           rel: 0,
-          playsinline: 1
+          playsinline: 1,
+          loop: 1,              /* Enabled looping */
+          playlist: VIDEO_ID    /* Required for loop */
         },
         events: {
-          onReady: onPlayerReady,
-          onStateChange: onPlayerStateChange
+          onReady: onPlayerReady
         }
       });
     }
 
     function onPlayerReady(evt){
-      // make sure the iframe expands to fill the hero container
       const iframe = evt.target.getIframe();
       iframe.setAttribute('title','Hero video');
-
-      // OPTIONAL: uncomment to autoplay when allowed by browser
-      // evt.target.playVideo();
     }
 
-    function onPlayerStateChange(e){
-      // example: you can react to play/pause/ended here
-      // console.log('YT state', e.data);
-    }
-
-    // Fallback: if the API fails to load for some reason, inject a plain iframe
+    /* Fallback in case API fails */
     setTimeout(()=>{
       if(!window.YT){
         const container = document.getElementById('player');
         if(container && !container.querySelector('iframe')){
-          container.innerHTML = `<iframe src="https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Hero video"></iframe>`;
+          container.innerHTML =
+            `<iframe src="https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1&loop=1&playlist=${VIDEO_ID}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen title="Hero video"></iframe>`;
         }
       }
     },2500);
   </script>
+
 </body>
 </html>
