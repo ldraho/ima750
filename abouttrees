@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About Street Trees</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      background-color: #FFD8A8; /* light orange background */
+    }
+
+    /* HEADER STYLE */
+    h1 {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 20pt;
+      color: forestgreen;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+
+      /* full-width forest green line */
+      border-bottom: 2px solid forestgreen;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #006699;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>About Street Trees in New York City</h1>
+  <p>Use the links to learn more about caring for NYC street trees.</p>
+
+  <ol><li>
+    <a href="index.html">Home</a>
+  </li>
+      
+   
+  </li>
+  </ol>
+  <h1>About Street Trees in New York City</h1>
+  <p>The “Where A Tree Grow” project examines the gap between New York City’s ambitious tree canopy expansion goals and the long-term care required to sustain them. While trees provide critical benefits—such as reducing urban heat, absorbing stormwater, and improving mental well-being—their long-term maintenance often falls to underfunded city agencies and volunteers. Through visual documentation, the project will photograph neglected tree beds as well as document areas near subway stops with limited canopy coverage across the five boroughs. Ultimately, the project seeks to reframe urban trees from “nice to have” into essential infrastructure deserving of sustained public investment.</p>
+   <h3>Project Description</h3>
+  <p>When walking down the streets in Manhattan, I count the trees. I’ll see a tiny patch of green–a single tree–amid an expanse of concrete. Often a tree canopy is wedged into scaffolding or a tree bed is littered with trash. But this tree abuse is at odds with the benefits that come from keeping trees healthy–reducing the urban heat island effect, absorbing stormwater, and supporting people’s wellbeing. New York City–through government and nonprofit organizations–is focused on increasing the tree canopy from 22 to 30 percent by 2035, making equitable distribution of trees across the city a key priority.</p> 
+    
+
+<p>In New York City, only 17% of the city's seven million trees are in areas populated largely by people of color. The growing recognition of the value of trees has led to urban forestation efforts. The NYC Parks Department’s website now tracks when and where new trees will be planted. But without a long-term financial plan to care for these trees, the effort feels like greenwashing.</p>
+    
+
+<p>When I walk around my south Brooklyn neighborhood near East Flatbush, one of many tree-deserts, I see signs of progress. Many streets with new trees. But I also see neglect. Tree beds littered with garbage and inconsistent care that raises the question about sustained support for this capital investment.</p>
+    
+
+<p>Volunteer programs through the Parks Department and nonprofit organizations such as Big Reuse encourage communities to care for street trees, of which there are nearly 900,000 in NYC. But what these feel-good campaigns suggest is that caring for trees rests on the public, not an imperative on the part of the city. For a city the size of New York, the budget allocated to parks operation and maintenance is approximately half of what other major U.S. cities spend in comparison. Advocates point out that maintenance costs to care for these trees is the real issue as funds are needed to protect the initial investment. Trees should not be a negligible part of the urban fabric or a ‘nice to have’ but rather a necessary part of the urban landscape, just like sidewalks, street lighting, and parking spots.</p> 
+    
+
+<p>Using the My Trees map on the NYC Parks Department website, this project will visually document two areas related to urban forestation efforts. First, using photography, this project will explore the degradation of trees by looking at the impact of scaffolding, physical damage from cars and trucks, and poorly maintained tree beds. Second, this project will document a 3 block radius of a subway stop in each of the city’s five boroughs that have the least amount of trees.</p>
+
+<p>The goal of the project is to encourage New York City funding for increased and sustained support for urban forestation by keeping the need in the foreground. The intended audience are those within the tree and park advocacy space. And while funding has become available, thanks in part to funds through the Inflation Reduction Act, which earmarked $1.5 billion for organizations focused on urban forestry working in underserved communities, there is a long way to go. Sustained advocacy is needed to keep the City committed long-term. 
+</p>
+  
+</body>
+  
+</html>
